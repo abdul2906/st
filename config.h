@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/fish";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -53,8 +53,8 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 8;
-static double maxlatency = 33;
+static double minlatency = 0;
+static double maxlatency = 1;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -91,7 +91,7 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* bg opacity */
 float alpha = 0.8;
@@ -189,7 +189,7 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
